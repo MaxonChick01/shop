@@ -1,0 +1,46 @@
+{% load static %}
+<footer>
+	<div class="container">
+		<div class="footer__container">
+			<div class="footer__body">
+				<a href="{% url 'catalog' %}" class="footer__logo">
+					<img src="{% static 'Img/Footer/Logo.svg' %}" alt="">
+				</a>
+				<nav class="footer__menu">
+					<ul class="footer__links">
+						<li>
+							<a href="{% url 'contacts' %}" class="footer__link">
+								Контакты
+							</a>
+						</li>
+					</ul>
+				</nav>
+				<a class="footer__condition" href="{% url 'conditions' %}">Условия сервиса</a>
+				<div class="footer__social-networks social-networks">
+					<ul class="social-networks__links">
+						<li>
+							<a href="" class="social-networks__link">
+								<img src="{% static 'Img/Footer/Icon_03.png' %}" alt="">
+							</a>
+						</li>
+						<li>
+							<a href="" class="social-networks__link">
+								<img src="{% static 'Img/Footer/Icon_04.png' %}" alt="">
+							</a>
+						</li>
+						<li>
+							<a href="" class="social-networks__link">
+								<img src="{% static 'Img/Footer/Icon_02.png' %}" alt="">
+							</a>
+						</li>
+						<li>
+							<a href="" class="social-networks__link">
+								<img src="{% static 'Img/Footer/Icon_01.png' %}" alt="">
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>

@@ -1,0 +1,1 @@
+function ibg(){var e=document.querySelectorAll(".ibg");e.length>0&&e.forEach((e=>{let t=e.querySelector("img").getAttribute("src");e.style.backgroundImage='url("'+t+'")'}))}ibg();

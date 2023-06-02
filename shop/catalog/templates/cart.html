@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+		<main>
+			<section class="cart">
+				<div class="container">
+					<div class="cart__body">
+						<h1 class="cart__title">
+							Корзина
+						</h1>
+						<div class="cart__content">
+							<div class="cart__info">
+								<div class="cart__products">
+									<div class="cart__item">
+										<button class="cart__item-del"></button>
+										<div class="cart__item-content">
+											<div class="cart__item-image">
+												<img src="{% static 'Img/Cart/Image_02.png' %}" alt="">
+											</div>
+											<div class="cart__item-desc">
+												<h3 class="cart__item-title">
+													Iphone 13 Pro Max
+												</h3>
+												<p class="cart__item-cost">
+													60 000 ₽
+												</p>
+											</div>
+										</div>
+										<div class="cart__item-footer">
+											<div class="cart__item-count">
+												<button class="cart__item-minus"></button>
+												<span class="cart__item-count-value">1</span>
+												<button class="cart__item-plus"></button>		
+											</div>
+											<p class="cart__item-cost_all">
+												60 000 ₽
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="cart__summ-body">
+								<div class="cart__summ-content">
+									<p class="cart__summ-title">ИТОГО</p>
+									<p class="cart__summ-cost">60 000 ₽</p>
+								</div>
+								<a href="{% url 'order' 1%}" class="cart__summ-btn button">
+									Перейти к оформлению
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'catalog.html' %}
+{% load static %}
+{% block main %}
+		<main>
+			<section class="contacts">
+				<div class="container">
+					<div class="contacts__body">
+						<div class="contacts__content">
+							<div class="contacts__map">
+								<h3 class="contacts__title">
+									Наш офис
+								</h3>
+								<div class="map">
+									<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d632.5920375598745!2d40.07285605845869!3d44.61252156817917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1685376780937!5m2!1sru!2sru" width="722" height="420" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+								</div>
+								<div class="contacts__location">
+									<p>
+										ул. 3 Интернационала, Майкоп, Россия
+									</p>
+									<p>
+										<span>3 этаж 35 кабинет</span>
+									</p>
+								</div>
+							</div>
+							<ul class="contacts__links">
+								<li>
+									<a href="" class="contacts__link">
+										<img src="{% static 'Img/Contacts/Icon_03.png' %}" alt="">
+									</a>
+								</li>
+								<li>
+									<a href="" class="contacts__link">
+										<img src="{% static 'Img/Contacts/Icon_04.png' %}" alt="">
+									</a>
+								</li>
+								<li>
+									<a href="" class="contacts__link">
+										<img src="{% static 'Img/Contacts/Icon_02.png' %}" alt="">
+									</a>
+								</li>
+								<li>
+									<a href="" class="contacts__link">
+										<img src="{% static 'Img/Contacts/Icon_01.png' %}" alt="">
+									</a>
+								</li>
+							</ul>
+						</div>
+						<a href="tel:+77777777777" class="contacts__phone">
+							+7 777 777 77 77
+						</a>
+					</div>
+				</div>
+			</section>
+		</main>
+{% endblock %}

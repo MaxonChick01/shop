@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+	<main>
+			<section class="order">
+				<div class="container">
+					<div class="order__body">
+						<h1 class="order__title">
+							Оформление заказа
+						</h1>
+						<div class="order__info">
+							<h3 class="order__info-title">
+								Ваш заказ
+							</h3>
+							<div class="order__info-content">
+								<div class="order__info-item">
+									<div class="order__info-desc">
+										<span class="order__info-count">
+											1х
+										</span>
+										<p class="order__info-name">
+											{{ item.name }}
+										</p>
+									</div>
+									<span class="order__info-cost">
+										{{ item.price }} ₽
+									</span>
+								</div>
+
+								<div class="order__info-item">
+									<div class="order__info-desc">
+										<span class="order__info-count">
+										</span>
+										<p class="order__info-name">
+											К оплате
+										</p>
+									</div>
+									<span class="order__info-cost">
+										{{ item.price }} ₽
+									</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="order__payment">
+							<h3 class="order__payment-title">
+								Способ оплаты
+							</h3>
+							<p class="order__payment-desc">
+								Наличные
+							</p>
+						</div>
+						<form action="{% url 'catalog' %}" class="order__form" method="post">
+							{% csrf_token %}
+							<div class="order__nubmer">
+								<h3 class="order__nubmer-title">
+									Данные получателя
+								</h3>
+								<input type="tel" placeholder="Ваш номер" class="order__nubmer-input">
+								<input type="email" placeholder="Ваш e-mail" class="order__nubmer-input">
+							</div>
+							<button type="submit" class="order__form-button">Закончить оформление</button>
+						</form>
+					</div>
+				</div>
+			</section>
+		</main>
+{% endblock %}

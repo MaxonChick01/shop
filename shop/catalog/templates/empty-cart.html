@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+	<main>
+			<section class="empty-cart">
+				<div class="container">
+					<div class="empty-cart__body">
+						<div class="empty-cart__image">
+							<img src="{% static 'Img/Cart/Image_01.png' %}" alt="">
+						</div>
+						<h1 class="empty-cart__title">
+							Корзина пуста
+						</h1>
+						<p class="empty-cart__description">
+							Но это никогда не поздно исправить :)
+						</p>
+						<a href="{% url 'catalog' %}" class="empty-cart__link button">
+							В каталог товаров
+						</a>
+					</div>
+				</div>
+			</section>
+		</main>
+{% endblock %}

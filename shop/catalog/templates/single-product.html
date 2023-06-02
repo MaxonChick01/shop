@@ -1,0 +1,53 @@
+{% extends 'catalog.html' %}
+{% load static %}
+{% block main %}
+	<main>
+			<section class="single-product">
+				<div class="container">
+					<div class="single-product__body">
+						<h1 class="single-product__title title">
+							{{ category.name }}
+						</h1>
+						<div class="single-product__gallery gallery">
+							<div class="gallery__images">
+								{% for photo in obj.image.all %}
+								<img src="../media/{{ photo.img }}" alt="">
+								{% endfor %}
+							</div>
+							<div class="gallery__description">
+								<h2 class="gallery__title">
+									{{ obj.model_name }}
+								</h2>
+								<p class="gallery__cost">
+									{{ obj.price }} ₽
+								</p>
+							</div>
+						</div>
+						<div class="single-product__description description">
+							<div class="description__body">
+								<div class="description__content">
+									<h4 class="description__title">
+										Описание и характеристики
+									</h4>
+									{% load util %}
+									<div class="description__desc">
+										{% for key, val in fields.items %}
+										{% if val|get_type == 'bool' %}
+										<p>{{ key }}: {{ val|yesno:"+,-" }}</p>
+										{% else %}
+										<p>{{ key }}: {{ val }}</p>
+										{% endif %}
+										{% endfor %}
+									</div>
+								</div>
+								<div class="description__btns">
+									<a href="{% url 'order' obj.pk %}" class="description__button button">Купить!</a>
+<!--									<a href="" class="description__button button button_cart">Добавить в корзину</a>-->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+{% endblock %}

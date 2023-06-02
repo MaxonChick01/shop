@@ -1,0 +1,32 @@
+{% extends 'catalog.html' %}
+{% load static %}
+{% block main %}
+	<main>
+		<section class="products">
+			<div class="container">
+				<div class="products__body">
+					<h1 class="products__title title">
+						{{ category.name }}
+					</h1>
+					<div class="products__items-body items-body">
+						{% for item in items %}
+						<a href="{{ category.slug }}/{{ item.pk }}" class="products__item item">
+							<div class="products__item-image item-image">
+								<img src="media/{{ item.image.first.img }}" alt="">
+							</div>
+							<div class="item-description">
+								<h3 class="products__item-title item-title">
+									{{ item.model_name }}
+								</h3>
+								<p class="item-cost">
+									{{ item.price }} ₽
+								</p>
+							</div>
+						</a>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+{% endblock %}

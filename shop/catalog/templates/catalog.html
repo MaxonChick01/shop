@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+	<main>
+			<section class="catalog">
+				<div class="container">
+					<div class="catalog__body">
+						<a href="{% url 'catalog' %}" class="catalog__banner banner">
+							<div class="banner__body">
+								<h2 class="banner__title">
+									Iphone 13 PRO
+								</h2>
+								<div class="banner__image">
+									<img src="{% static 'Img/Catalog/Image_01.png' %}" alt="">
+								</div>
+							</div>
+						</a>
+						<h1 class="catalog__title title">
+							Каталог товаров
+						</h1>
+						<div class="catalog__items-body items-body">
+							{% for cat in categories %}
+							<a href="{{ cat.slug }}" class="catalog__item item">
+								<div class="catalog__item-image item-image">
+									<img src="media/{{ cat.image }}" alt="">
+								</div>
+								<h3 class="catalog__item-title item-title">
+									{{ cat.name }}
+								</h3>
+							</a>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+{% endblock %}
